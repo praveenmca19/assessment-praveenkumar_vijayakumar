@@ -9,8 +9,15 @@ module.exports = {
       m: { max: "800px" },
     },
     extend: {
-      colors: {
-        // add custom colors (outside of tailwind)
+      colors: {        
+        success: "#002B2B",  
+        info: "#005555", 
+        secondary: "#444444", 
+        ctabtn: "#008080",  
+        ctmbg: "#F0F5F5",
+
+       
+        // add custom colors (outside of tailwind)        
       },
       spacing: {
         // add custom spacings (outside of tailwind)
@@ -68,8 +75,9 @@ module.exports = {
     require("tailwindcss-mso"),
     require("tailwindcss-box-shadow"),
     require("tailwindcss-email-variants"),
-    plugin(function ({ addComponents, theme }) {
+    plugin(function ({ addComponents, theme, addUtilities }) {
       addComponents({
+        ".ctm-green": {color: "#000049"},
         ".align-center-table": {},
         ".align-right-table": {},
         ".align-left-table": {},
@@ -80,6 +88,18 @@ module.exports = {
           fontSize: "70%",
           lineHeight: "0",
         },
+      });
+      addUtilities({
+        ".ctm-green": {
+          backgroundColor: "#000049",
+          color: "#ffffff",
+          padding: "12px 24px",
+          borderRadius: "6px",
+          fontSize: "14px",
+          fontWeight: "bold",
+          textAlign: "center",
+          display: "inline-block",
+        }
       });
     }),
   ],
